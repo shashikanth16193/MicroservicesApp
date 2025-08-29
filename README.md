@@ -74,9 +74,7 @@ Docker & Docker Compose
 
 📂 Project Structure
 
-    LocalSetup/
-    
-    ├── MicroservicesApp/
+    MicroservicesApp/
    
          │── auth-service/          # Authentication & JWT
        
@@ -92,30 +90,22 @@ Docker & Docker Compose
        
          └── docker-compose.yml     # Runs all services together
        
-     └── AppConfigs/           # contains config files
-   
+
    
 
 Getting Started
-1. Create LocalSetup folder
 
-  cd LocalSetup
 
-3. Clone the MicroservicesApp repo
+1. Clone the MicroservicesApp repo
 
-git clone https://github.com/shashikanth16193/MicroservicesApp.git
+   git clone https://github.com/shashikanth16193/MicroservicesApp.git
 
-3. Clone the AppConfigs repo
 
-git clone https://github.com/shashikanth16193/AppConfis.git
+2. Start Services with Docker
 
-4. Start Services with Docker
+  docker-compose up
 
-cd LocalSetup/MicroservicesApp
-
-docker-compose up
-
-5.Postman collection for testing
+3.Postman collection for testing
 
 Future Enhancements
 
