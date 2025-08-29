@@ -20,14 +20,11 @@ Teachers can create and manage courses
 
 Students can view available courses
 
-JWT-based identity extraction (no ID from request body)
-
 
 review-service :-
 
 Students can post reviews for courses
 
-Teachers/Admins can moderate reviews
 
 
 api-gateway :-
