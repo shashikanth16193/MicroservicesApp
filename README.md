@@ -75,20 +75,17 @@ Docker & Docker Compose
 📂 Project Structure
 
     MicroservicesApp/
+     ├── postman/
+     │     └── MicroservicesApp.postman_collection.json 
+     |
+     ├── auth-service/             # Authentication & JWT
+     ├── course-service/           # Course management
+     ├── review-service/           # Review management
+     ├── api-gateway/              # API Gateway
+     ├── eureka-server/            # Service Discover
+     ├── config-server/            # Centralized config
+     └── docker-compose.yml        # Runs all services together
    
-         │── auth-service/          # Authentication & JWT
-       
-         │── course-service/        # Course management
-       
-         │── review-service/        # Review management
-       
-         │── api-gateway/           # API Gateway 
-       
-         │── eureka-server/         # Service Discovery
-       
-         │── config-server/         # Centralized config
-       
-         └── docker-compose.yml     # Runs all services together
        
 
    
@@ -106,6 +103,7 @@ Getting Started
     docker-compose up
 
 3.Postman collection for testing
+   import postman collection json file from MicroserviceApp/postman folder
 
 Future Enhancements
 
