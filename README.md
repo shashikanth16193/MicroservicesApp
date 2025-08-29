@@ -92,21 +92,20 @@ Docker & Docker Compose
 
 Getting Started
 
-
 1. Clone the MicroservicesApp repo
 
     git clone https://github.com/shashikanth16193/MicroservicesApp.git
-
 
 2. Start Services with Docker
 
     docker-compose up
 
- 3.Postman collection for testing
+3.Postman collection for testing
      
    import postman collection json file from MicroserviceApp/postman folder
 
    
+
 
 Future Enhancements
 
