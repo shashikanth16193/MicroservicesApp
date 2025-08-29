@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c3e3bfd1-47f7-4509-81fb-3093d7e5c029",
+		"_postman_id": "a74f8d51-6503-4718-8881-9be92c763d92",
 		"name": "MicroServiceApp postman Collections",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33968031"
@@ -120,10 +120,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{authServiceBaseUrl}}/myLogin",
+							"raw": "http://localhost:9000/myLogin",
+							"protocol": "http",
 							"host": [
-								"{{authServiceBaseUrl}}"
+								"localhost"
 							],
+							"port": "9000",
 							"path": [
 								"myLogin"
 							]
@@ -146,10 +148,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{authServiceBaseUrl}}/myLogin",
+							"raw": "http://localhost:9000/myLogin",
+							"protocol": "http",
 							"host": [
-								"{{authServiceBaseUrl}}"
+								"localhost"
 							],
+							"port": "9000",
 							"path": [
 								"myLogin"
 							]
@@ -206,10 +210,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiGatewaybaseURL}}/course-service/student",
+							"raw": "http://localhost:8080/course-service/student",
+							"protocol": "http",
 							"host": [
-								"{{apiGatewaybaseURL}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"course-service",
 								"student"
@@ -234,10 +240,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiGatewaybaseURL}}/course-service/teacher",
+							"raw": "http://localhost:8080/course-service/teacher",
+							"protocol": "http",
 							"host": [
-								"{{apiGatewaybaseURL}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"course-service",
 								"teacher"
@@ -262,10 +270,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiGatewaybaseURL}}/course-service/teacher",
+							"raw": "http://localhost:8080/course-service/teacher",
+							"protocol": "http",
 							"host": [
-								"{{apiGatewaybaseURL}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"course-service",
 								"teacher"
@@ -283,23 +293,79 @@
 					"name": "everyone access resource",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review-service/everyone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review-service",
+								"everyone"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "student access resource",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMkBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjUsImV4cCI6MTc1NjQ2MTgwNSwiaWF0IjoxNzU2NDYxMjA1fQ.XztkRiYLQRgMEfY4FUiWnOZKk9N-DvSEeNE4QJ4pa3o",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review-service/student",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review-service",
+								"student"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "admin access resource",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMkBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjUsImV4cCI6MTc1NjQ2MTgwNSwiaWF0IjoxNzU2NDYxMjA1fQ.XztkRiYLQRgMEfY4FUiWnOZKk9N-DvSEeNE4QJ4pa3o",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review-service/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review-service",
+								"admin"
+							]
+						}
 					},
 					"response": []
 				},
@@ -319,10 +385,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiGatewaybaseURL}}/review-service/teacher",
+							"raw": "http://localhost:8080/review-service/teacher",
+							"protocol": "http",
 							"host": [
-								"{{apiGatewaybaseURL}}"
+								"localhost"
 							],
+							"port": "8080",
 							"path": [
 								"review-service",
 								"teacher"
