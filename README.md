@@ -3,9 +3,9 @@ MicroservicesApp
 A Spring Boot Microservices-based application that demonstrates core microservices patterns like Service Discovery, API Gateway, Centralized Configuration, Authentication & Authorization with JWT
 
 
-Implemented Features:
+Implemented Features :-
 
-auth-service:
+auth-service :-
 
 User login with email & password
 
@@ -14,7 +14,7 @@ JWT token generation with role-based access control (RBAC)
 Role support: STUDENT, TEACHER, ADMIN
 
 
-course-service
+course-service :-
 
 Teachers can create and manage courses
 
@@ -23,14 +23,14 @@ Students can view available courses
 JWT-based identity extraction (no ID from request body)
 
 
-review-service
+review-service :-
 
 Students can post reviews for courses
 
 Teachers/Admins can moderate reviews
 
 
-api-gateway
+api-gateway :-
 
 Routes requests to appropriate services
 
@@ -39,14 +39,14 @@ Validates JWT tokens before forwarding
 Implements Circuit Breaker & Rate Limiter using Resilience4j
 
 
-eureka-server (Service Discovery)
+eureka-server (Service Discovery) :-
 
 Each service registers itself
 
 Gateway & other services discover dynamically
 
 
-config-server (Centralized Configuration)
+config-server (Centralized Configuration) :-
 
 Externalized configuration stored in Git repository
 
@@ -102,7 +102,7 @@ Docker & Docker Compose
 Getting Started
 1. Create LocalSetup folder
 
-cd LocalSetup
+  cd LocalSetup
 
 3. Clone the MicroservicesApp repo
 
