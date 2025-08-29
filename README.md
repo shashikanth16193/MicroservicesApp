@@ -98,12 +98,12 @@ Getting Started
 
 1. Clone the MicroservicesApp repo
 
-   git clone https://github.com/shashikanth16193/MicroservicesApp.git
+    git clone https://github.com/shashikanth16193/MicroservicesApp.git
 
 
 2. Start Services with Docker
 
-  docker-compose up
+    docker-compose up
 
 3.Postman collection for testing
 
@@ -112,5 +112,7 @@ Future Enhancements
 Exception and Error Handling
 
 Implementing Resilience4j patterns across down stream micro services
+
 Centralized Logging with ELK (ElasticSearch, Logstash, Kibana)
+
 Distributed Tracing with Zipkin
