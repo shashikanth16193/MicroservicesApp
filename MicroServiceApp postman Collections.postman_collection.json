@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "c3e3bfd1-47f7-4509-81fb-3093d7e5c029",
+		"name": "MicroServiceApp postman Collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33968031"
+	},
+	"item": [
+		{
+			"name": "auth-service",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"student2@gmail.com\",\r\n    \"password\":\"student123\",\r\n    \"roles\":\"STUDENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/myLogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"myLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"teacher@gmail.com\",\r\n    \"password\":\"teacher123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/myLogin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"myLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"student@gmail.com\",\r\n    \"password\":\"student123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/myLogin",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"myLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registered user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"teacher2@gmail.com\",\r\n    \"password\":\"teacher1234\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{authServiceBaseUrl}}/myLogin",
+							"host": [
+								"{{authServiceBaseUrl}}"
+							],
+							"path": [
+								"myLogin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course-service",
+			"item": [
+				{
+					"name": "everyone access resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJyb2xlcyI6WyJBRE1JTiJdLCJleHAiOjE3NTY0NTk5OTIsImlhdCI6MTc1NjQ1OTM5Mn0.7oFU7GavCGOrUXuigOZsKlE4_LWThi7os1SbhzQ36Po",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGatewaybaseURL}}/course-service/everyone",
+							"host": [
+								"{{apiGatewaybaseURL}}"
+							],
+							"path": [
+								"course-service",
+								"everyone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student access resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjMsImV4cCI6MTc1NjQ1OTEzMiwiaWF0IjoxNzU2NDU4NTMyfQ.Q53N7QmuZ94x9tyFaGhL-JWvrSi9fMG6lyVIXr-6qIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGatewaybaseURL}}/course-service/student",
+							"host": [
+								"{{apiGatewaybaseURL}}"
+							],
+							"path": [
+								"course-service",
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teacher access resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjMsImV4cCI6MTc1NjQ1OTEzMiwiaWF0IjoxNzU2NDU4NTMyfQ.Q53N7QmuZ94x9tyFaGhL-JWvrSi9fMG6lyVIXr-6qIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGatewaybaseURL}}/course-service/teacher",
+							"host": [
+								"{{apiGatewaybaseURL}}"
+							],
+							"path": [
+								"course-service",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin access resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjMsImV4cCI6MTc1NjQ1OTEzMiwiaWF0IjoxNzU2NDU4NTMyfQ.Q53N7QmuZ94x9tyFaGhL-JWvrSi9fMG6lyVIXr-6qIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGatewaybaseURL}}/course-service/teacher",
+							"host": [
+								"{{apiGatewaybaseURL}}"
+							],
+							"path": [
+								"course-service",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review-service",
+			"item": [
+				{
+					"name": "everyone access resource",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "student access resource",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "admin access resource",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "teacher access resource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZWFjaGVyMkBnbWFpbC5jb20iLCJyb2xlcyI6WyJURUFDSEVSIl0sImN1c3RvbWVySWQiOjUsImV4cCI6MTc1NjQ2MTgwNSwiaWF0IjoxNzU2NDYxMjA1fQ.XztkRiYLQRgMEfY4FUiWnOZKk9N-DvSEeNE4QJ4pa3o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGatewaybaseURL}}/review-service/teacher",
+							"host": [
+								"{{apiGatewaybaseURL}}"
+							],
+							"path": [
+								"review-service",
+								"teacher"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "apiGatewaybaseURL",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "authServiceBaseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
