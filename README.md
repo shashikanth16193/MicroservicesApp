@@ -98,6 +98,8 @@ Getting Started
 
 2. Start Services with Docker
 
+    cd MicroservicesApp
+   
     docker-compose up
 
 3.Postman collection for testing
